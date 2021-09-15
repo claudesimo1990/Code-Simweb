@@ -5,13 +5,28 @@
     {% do pimcore_head_meta().setDescription(document.description, 160) %}
 {% endif %}
 
+{% set thumbnail = owner.image.getThumbnail("card") %}
+
 {% block content %}
 <section id="about" class="my-4">
     <!-- Wrapper container -->
     <div class="container">
         <div class="row">
-            <div class="col-md-4 border">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias at consequatur corporis ea facere, incidunt, iusto labore natus nulla provident quaerat quidem quo recusandae sint soluta suscipit vitae. Deleniti, totam?
+            <div class="col-md-4">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="{{ thumbnail }}" class="card-img" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ owner.name }}</h5>
+                                <p class="card-text">{{ owner.citate }}</p>
+                                <p class="card-text"><small class="text-muted"></small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col-md-8">
                 <!-- Bootstrap 5 starter form -->

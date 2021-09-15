@@ -3,15 +3,18 @@
 namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
+use Pimcore\Model\DataObject\Team;
 
 class ContactController extends BaseController
 {
     /**
      * @return Response
      */
-    public function indexAction(): Response
+    public function createAction(): Response
     {
-        return $this->render('content/contact.html.twig');
+        $owner = Team::getList()->getData()[0];
+
+        return $this->render('content/contact.html.twig', compact('owner'));
 
     }
 
