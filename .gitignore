@@ -9,4 +9,3 @@
 *.png
 *.jpg
 public/var/tmp/thumbnails/
-config/local/database.yaml
