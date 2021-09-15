@@ -6,6 +6,7 @@
 .idea
 .DS_Store
 .env
-/config/local
 *.png
 *.jpg
+public/var/tmp/thumbnails/
+config/local/database.yaml
